@@ -40,6 +40,10 @@ a img
 a img:hover
 {background:#d85d5d; border-color:#d85d5d;}
 
+hr
+{border-color: #ccc; border-style: solid; border-width: 1px 0 0; clear: both; margin: 2px 0 20px; height: 0;}
+
+
 /**************** Sidebar area styles ****************/
 
 #sidebar
@@ -120,8 +124,10 @@ body
 <a href="http://andreasviklund.com/">Contact</a>
 </div>
 
-<h3>Version info:</h3>
+<h3>Template Version info:</h3>
 <p>v1.1 (Nov 28, 2005)</p>
+<h3>tumblr theme info:</h3>
+<p><a href="http://github.com/tabbot/themes/tree/fe221b37a61ee84d9daf4c76bc4e3d6daa805dcd/tumblr-andreas07">dev snapshot</a></p>
 </div>
 
 <div id="content">
@@ -132,21 +138,24 @@ body
   {block:Title}
   <h3><a href="{Permalink}">{Title}</a></h3>
   {/block:Title}
-  <p>{Body}</p>
+  {Body}
+  <hr>
  {/block:Text}
-
+ 
  {block:Photo}
   <p><img src="{PhotoURL-400}" alt="{PhotoAlt}"/></p>
   {block:Caption}
    <div class="caption">{Caption}</div>
   {/block:Caption}
+  <hr>
  {/block:Photo}
 
  {block:Quote}
- <p>"{Quote}"</p>
+ "{Quote}"
  {block:Source}
  <div class="source">{Source}</div>
  {/block:Source}
+  <hr>
  {/block:Quote}
 
  {block:Link}
@@ -154,6 +163,7 @@ body
  {block:Description}
  <p>{Description}</p>
  {/block:Description}
+  <hr>
  {/block:Link}
 
  {block:Chat}
@@ -166,6 +176,7 @@ body
  {/block:Label}
  {Line}
  {/block:Lines}
+  <hr>
  {/block:Chat}
 
  {block:Video}
@@ -173,9 +184,18 @@ body
  {block:Caption}
  <p>{Caption}</p>
  {/block:Caption}
+  <hr>
  {/block:Video}
 
 {/block:Posts}
+
+{block:PreviousPage}
+ <a href="{PreviousPage}">&#171; Previous</a>
+{/block:PreviousPage}
+
+{block:NextPage}
+ <a href="{NextPage}">Next &#187;</a>
+{/block:NextPage}
 
 <h3>site info</h3>
 <p>&copy; 2005-2006 {Title}, Design by <a href="http://andreasviklund.com">Andreas Viklund</a>.</p>
